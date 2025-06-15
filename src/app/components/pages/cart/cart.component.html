@@ -1,0 +1,43 @@
+<div class="min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-center text-gray-900">Carrello</h1>
+
+        @if (pizzaState.pizzasCart().length > 0) {
+        <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <div class="bg-gray-50 p-4 hidden md:flex items-center gap-4 font-bold text-gray-900">
+                <div class="w-16 lg:w-20 flex-shrink-0"></div>
+                <div class="flex-grow min-w-0">Pizza</div>
+                <div class="w-20 lg:w-24 text-left flex-shrink-0">Prezzo</div>
+                <div class="w-20 lg:w-24 text-left flex-shrink-0">Quantità</div>
+                <div class="w-auto"></div>
+            </div>
+
+
+            @for(pizza of pizzaState.pizzasCart(); track pizza.id) {
+            <app-cart-item [pizzaItem]="pizza" (removeItem)="pizzaState.removeFromCart($event)"></app-cart-item>
+            }
+
+
+            <div class="bg-orange-50 p-6 border-t-2 border-orange-200">
+                <div class="flex justify-between items-center">
+                    <span class="text-xl sm:text-2xl font-bold text-gray-900">Totale:</span>
+                    <span class="text-2xl sm:text-3xl font-bold text-orange-500">€ {{pizzaState.totalPrice().toFixed(2)}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center">
+            <button (click)="openConfirmationModal()" class="bg-orange-500 text-white px-8 sm:px-12 py-3 sm:py-4 rounded-xl text-lg sm:text-xl font-bold hover:bg-orange-600 transition-colors shadow-lg">Procedi al pagamento</button>
+        </div>
+        } @else {
+        <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <div class="p-8 text-center">
+                <p class="text-xl text-gray-600">Il tuo carrello è vuoto.</p>
+                <a [routerLink]="['/menu']" class="mt-4 inline-block bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">Torna al Menu</a>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<app-confirmation-modal [isVisible]="isModalOpen()" (closeModalEvent)="closeConfirmationModal()"></app-confirmation-modal>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30">
+  <!-- Base della pizza -->
+  <circle cx="50" cy="50" r="45" fill="#F9C74F" />
+  
+  <!-- Crosta -->
+  <path d="M50,5 
+           a45,45 0 1,0 0,90 
+           a45,45 0 1,0 0,-90 
+           z" 
+        fill="none" 
+        stroke="#C87137" 
+        stroke-width="8" />
+  
+  <!-- Salsa di pomodoro (macchie) -->
+  <circle cx="35" cy="30" r="8" fill="#D64545" />
+  <circle cx="65" cy="40" r="10" fill="#D64545" />
+  <circle cx="42" cy="65" r="9" fill="#D64545" />
+  <circle cx="70" cy="70" r="7" fill="#D64545" />
+  <circle cx="25" cy="60" r="6" fill="#D64545" />
+  
+  <!-- Formaggio (macchie bianche) -->
+  <circle cx="28" cy="30" r="3" fill="#FFF5D7" />
+  <circle cx="60" cy="30" r="4" fill="#FFF5D7" />
+  <circle cx="40" cy="50" r="3.5" fill="#FFF5D7" />
+  <circle cx="70" cy="55" r="3" fill="#FFF5D7" />
+  <circle cx="30" cy="70" r="4" fill="#FFF5D7" />
+  <circle cx="58" cy="68" r="3.5" fill="#FFF5D7" />
+  
+  <!-- Pepperoni (fette di salame) -->
+  <circle cx="40" cy="25" r="5" fill="#9C2A2A" />
+  <circle cx="60" cy="45" r="5" fill="#9C2A2A" />
+  <circle cx="30" cy="55" r="5" fill="#9C2A2A" />
+  <circle cx="65" cy="65" r="5" fill="#9C2A2A" />
+  
+  <!-- Linee di taglio della pizza -->
+  <line x1="50" y1="5" x2="50" y2="95" stroke="#C87137" stroke-width="1.5" />
+  <line x1="5" y1="50" x2="95" y2="50" stroke="#C87137" stroke-width="1.5" />
+  <line x1="17" y1="17" x2="83" y2="83" stroke="#C87137" stroke-width="1.5" />
+  <line x1="17" y1="83" x2="83" y2="17" stroke="#C87137" stroke-width="1.5" />
+</svg>

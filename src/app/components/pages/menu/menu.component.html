@@ -1,0 +1,24 @@
+<div class="min-h-screen bg-white mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-4xl font-bold my-10 text-gray-900 text-center">Scegli la pizza che desideri ordinare</h1>
+
+    @if (isLoading()) {
+    <div class="flex justify-center items-center py-8">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-orange-500"></div>
+    </div>
+    } @else if (errorMessage()) {
+    <div
+        class="max-w-lg mx-auto bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 flex justify-center items-center">
+        <p>Error {{errorMessage()}}</p>
+    </div>
+    } @else if (pizzas().length > 0) {
+        <div class="flex flex-wrap justify-center gap-6">
+            @for(pizza of pizzas(); track pizza.id) {
+                <app-pizza-card [pizza]="pizza" class="w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"></app-pizza-card>
+            }
+        </div>
+    } @else {
+        <div class="flex justify-center items-center py-8">
+            <p class="text-gray-600 text-lg">Nessuna pizza disponibile al momento.</p>
+        </div>
+    }
+</div>
