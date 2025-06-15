@@ -14,7 +14,7 @@ Before you begin, ensure you have the following installed:
     *   **Option 1: Clone the repository (requires Git)**:
         Open a terminal and run (if applicable, replace with your repository URL if you host it elsewhere):
         ```bash
-        # git clone https://example.com/your-repo.git
+        # git clone https://github.com/antonicotra/exam-pizzeria-angular.git
         # cd esame-pizzeria-angular
         ```
     *   **Option 2: Download ZIP**:
