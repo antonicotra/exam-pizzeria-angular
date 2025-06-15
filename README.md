@@ -2,6 +2,9 @@
 
 This is a simple pizzeria web application built with Angular, created as a class exam project. It allows users to browse a menu, view pizza details, add items to a cart, and simulate an order.
 
+## Video
+https://github.com/user-attachments/assets/3ecf854a-0ae9-4931-8a65-c86c88be95c4
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
